@@ -1,0 +1,45 @@
+[package]
+name = "nannou_sketchbook"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nannou = "0.17"
+
+# experiments
+[[example]]
+name = "experiment_001"
+path = "src/main.rs"
+
+# sketchbook
+[[example]]
+name = "sketch_001"
+path = "sketches/sketch_001.rs"
+[[example]]
+name = "sketch_002"
+path = "sketches/sketch_002.rs"
+[[example]]
+name = "sketch_003"
+path = "sketches/sketch_003.rs"
+[[example]]
+name = "sketch_004"
+path = "sketches/sketch_004.rs"
+[[example]]
+name = "sketch_005"
+path = "sketches/sketch_005.rs"
+[[example]]
+name = "sketch_006"
+path = "sketches/sketch_006.rs"
+[[example]]
+name = "sketch_007"
+path = "sketches/sketch_007.rs"
+[[example]]
+name = "sketch_008"
+path = "sketches/sketch_008.rs"
+
+# works
+[[example]]
+name = "work_001"
+path = "works/work_001"
