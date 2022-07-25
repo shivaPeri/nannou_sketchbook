@@ -1,42 +1,35 @@
-use std::collections::VecDeque;
 use nannou::prelude::*;
 
 fn main() {
     nannou::app(model).update(update).run();
 }
 
-const N_POINTS: usize = 100;
-
 struct Model {
-    points: VecDeque<Vec2>
 }
 
 fn model(_app: &App) -> Model {
     let _window = _app.new_window().view(view).build().unwrap();
 
-    Model { points: VecDeque::new() }
+    Model {  }
 }
 
-fn update(app: &App, model: &mut Model, _update: Update) {
-    model.points.push_front(vec2(app.mouse.x, app.mouse.y));
-
-    if model.points.len() > N_POINTS {
-        model.points.pop_back();
-    }
+fn update(_app: &App, _model: &mut Model, _update: Update) {
 }
 
-fn view(app: &App, model: &Model, frame: Frame) {
+fn view(app: &App, _model: &Model, frame: Frame) {
     let draw = app.draw();
     let time = app.elapsed_frames();
-    let _angle = time as f32 / 100.;
+    let angle = time as f32 / 100.;
 
     draw.background().color(WHEAT);
 
-    draw.rect().w_h(200., 100.);
-
-    for i in 1..model.points.len() {
-        draw.line().start(model.points[i-1]).end(model.points[i])
-            .stroke_weight(10.).color(BLACK).caps_round();
+    
+    for i in 1..100 {
+        for j in 1..100 {
+            let x = (i as f32) * angle.sin();
+            let y = (j as f32) * angle.cos();
+            draw.rect().x_y(x,y).w_h(200., 200.).no_fill().stroke(BLACK).stroke_weight(1.0);
+        }
     }
 
     draw.to_frame(app, &frame).unwrap();
