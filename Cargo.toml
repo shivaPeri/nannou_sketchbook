@@ -38,6 +38,12 @@ path = "sketches/sketch_007.rs"
 [[example]]
 name = "sketch_008"
 path = "sketches/sketch_008.rs"
+[[example]]
+name = "sketch_009"
+path = "sketches/sketch_009.rs"
+[[example]]
+name = "sketch_010"
+path = "sketches/sketch_010.rs"
 
 # works
 [[example]]
